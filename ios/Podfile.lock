@@ -337,9 +337,73 @@ PODS:
     - React-jsi (= 0.66.0)
     - React-logger (= 0.66.0)
     - React-perflogger (= 0.66.0)
+  - RNTuyaSdk (0.3.7):
+    - React
+    - TuyaSmartHomeKit (~> 3.17.6)
+  - TuyaSmartActivatorCoreKit (3.28.5):
+    - TuyaSmartDeviceCoreKit
+  - TuyaSmartActivatorKit (3.26.6):
+    - TuyaSmartActivatorCoreKit
+    - TuyaSmartDeviceKit
+  - TuyaSmartBaseKit (3.29.0):
+    - TuyaSmartNetworkKit
+    - TuyaSmartUtil
+    - YYModel
+  - TuyaSmartBLEKit (3.29.5):
+    - TuyaSmartBaseKit
+    - TuyaSmartDeviceCoreKit
+    - TYBluetooth (< 10.0)
+  - TuyaSmartBLEMeshKit (3.29.5):
+    - TuyaSmartActivatorCoreKit
+    - TuyaSmartBaseKit
+    - TuyaSmartBLEKit
+    - TuyaSmartDeviceCoreKit (>= 3.20.0)
+    - TYBluetooth (< 10.0)
+  - TuyaSmartDeviceCoreKit (3.29.6):
+    - TuyaSmartBaseKit
+    - TuyaSmartMQTTChannelKit
+    - TuyaSmartSocketChannelKit
+  - TuyaSmartDeviceKit (3.29.6):
+    - TuyaSmartBaseKit
+    - TuyaSmartDeviceCoreKit (>= 3.21.0)
+  - TuyaSmartFeedbackKit (3.26.5):
+    - TuyaSmartBaseKit
+  - TuyaSmartHomeKit (3.17.6):
+    - TuyaSmartActivatorKit
+    - TuyaSmartBaseKit
+    - TuyaSmartBLEKit
+    - TuyaSmartBLEMeshKit
+    - TuyaSmartDeviceKit
+    - TuyaSmartFeedbackKit
+    - TuyaSmartMessageKit
+    - TuyaSmartMQTTChannelKit
+    - TuyaSmartSceneKit
+    - TuyaSmartSocketChannelKit
+    - TuyaSmartTimerKit
+  - TuyaSmartMessageKit (3.26.5):
+    - TuyaSmartBaseKit
+  - TuyaSmartMQTTChannelKit (3.29.0):
+    - TuyaSmartBaseKit
+    - TuyaSmartQUIC
+  - TuyaSmartNetworkKit (3.29.0):
+    - TuyaSmartUtil
+    - YYModel
+  - TuyaSmartQUIC (1.1.2)
+  - TuyaSmartSceneKit (3.29.5):
+    - TuyaSmartBaseKit
+    - TuyaSmartDeviceKit
+  - TuyaSmartSocketChannelKit (3.27.1):
+    - CocoaAsyncSocket (>= 7.4.3)
+    - TuyaSmartBaseKit
+  - TuyaSmartTimerKit (3.26.5):
+    - TuyaSmartBaseKit
+    - TuyaSmartDeviceKit
+  - TuyaSmartUtil (3.26.6)
+  - TYBluetooth (3.29.5)
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
     - Yoga (~> 1.14)
+  - YYModel (1.0.4)
 
 DEPENDENCIES:
   - boost (from `../node_modules/react-native/third-party-podspecs/boost.podspec`)
@@ -394,6 +458,8 @@ DEPENDENCIES:
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - React-runtimeexecutor (from `../node_modules/react-native/ReactCommon/runtimeexecutor`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - "RNTuyaSdk (from `../node_modules/@volst/react-native-tuya`)"
+  - TuyaSmartHomeKit (~> 3.17.6)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -411,7 +477,26 @@ SPEC REPOS:
     - fmt
     - libevent
     - OpenSSL-Universal
+    - TuyaSmartActivatorCoreKit
+    - TuyaSmartActivatorKit
+    - TuyaSmartBaseKit
+    - TuyaSmartBLEKit
+    - TuyaSmartBLEMeshKit
+    - TuyaSmartDeviceCoreKit
+    - TuyaSmartDeviceKit
+    - TuyaSmartFeedbackKit
+    - TuyaSmartHomeKit
+    - TuyaSmartMessageKit
+    - TuyaSmartMQTTChannelKit
+    - TuyaSmartNetworkKit
+    - TuyaSmartQUIC
+    - TuyaSmartSceneKit
+    - TuyaSmartSocketChannelKit
+    - TuyaSmartTimerKit
+    - TuyaSmartUtil
+    - TYBluetooth
     - YogaKit
+    - YYModel
 
 EXTERNAL SOURCES:
   boost:
@@ -472,6 +557,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/runtimeexecutor"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  RNTuyaSdk:
+    :path: "../node_modules/@volst/react-native-tuya"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -518,9 +605,29 @@ SPEC CHECKSUMS:
   React-RCTVibration: 53b92d54b923283638cb0186da7a5c2d2b70a49b
   React-runtimeexecutor: 4bb657a97aa74568d9ed634c8bd478299bb8a3a6
   ReactCommon: eb059748e842a1a86025ebbd4ac9d99e74492f88
+  RNTuyaSdk: 7d51d9da6c3258541ea19d7c9a33fe3f47bf8cf3
+  TuyaSmartActivatorCoreKit: e1f067ad69775dccf0b34bff91624d1691490513
+  TuyaSmartActivatorKit: d7e8f9b5b0461c5aae49d5dc344be4fcb9b8aac3
+  TuyaSmartBaseKit: 5106eaeea224d0c5acd89c3634b11716240d22ad
+  TuyaSmartBLEKit: 76b8503cd2e24ebbe68dd308f6e0c5e0c2c86a59
+  TuyaSmartBLEMeshKit: 628e942950f23a53e16ca44000daa850f6bb4e66
+  TuyaSmartDeviceCoreKit: 03096c89fb7f83ac326d336a54614deb4bbf1165
+  TuyaSmartDeviceKit: cdc2a53c8152ef98f5d5b36308df7c229cab34a1
+  TuyaSmartFeedbackKit: f8e95b5304ddcf2e57fae99025e9574b192c8ea0
+  TuyaSmartHomeKit: 8485c877647fe12ecafbfca7a70f27c95daa715b
+  TuyaSmartMessageKit: 218896d3d12b1ecc99451c032c368e6be579ee3c
+  TuyaSmartMQTTChannelKit: ae3c1d821fbc5a1a75541302ff56fd06e5ed8877
+  TuyaSmartNetworkKit: f71a028a465ef10b5d47361fc7dcf0cae2547dc2
+  TuyaSmartQUIC: e8407fa527877451820595dc6977e28d0af4825c
+  TuyaSmartSceneKit: c28c647d6787321c111b7f390402806c07b2b919
+  TuyaSmartSocketChannelKit: 32cea8e1bc03432ad244d13199e90ecba175aeb4
+  TuyaSmartTimerKit: 5cf69cc647178ecdbf1bfba10687789514bfe958
+  TuyaSmartUtil: f43d2102d6bc5888aac9aefa9e1fb6f16e1ba852
+  TYBluetooth: 4b78b2cae6cfa4f86633e79bad030e21450ce642
   Yoga: c11abbf5809216c91fcd62f5571078b83d9b6720
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 78c9a95d83057b67ddc708f4c6dc83ffa1ee2550
+PODFILE CHECKSUM: 3aa89f5dd203d7b850af14b090eca152db6a3966
 
 COCOAPODS: 1.11.2

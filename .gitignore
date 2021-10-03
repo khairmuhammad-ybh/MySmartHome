@@ -36,6 +36,12 @@ node_modules/
 npm-debug.log
 yarn-error.log
 
+# Api Keys / securities
+.env
+Tuya-info.plist
+t_s.bmp
+
+
 # BUCK
 buck-out/
 \.buckd/

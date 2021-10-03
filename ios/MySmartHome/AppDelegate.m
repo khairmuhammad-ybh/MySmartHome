@@ -3,6 +3,7 @@
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
+#import <TuyaSmartHomeKit/TuyaSmartKit.h>
 
 #ifdef FB_SONARKIT_ENABLED
 #import <FlipperKit/FlipperClient.h>
@@ -57,6 +58,13 @@ static void InitializeFlipper(UIApplication *application) {
 #else
   return [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
 #endif
+
+NSString *path = [[NSBundle mainBundle] pathForResource: @"Tuya-info" ofType: @"plist"];
+  NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: path];
+  id appkey = [dict objectForKey: @"TUYA_API_APP_KEY"];
+  id secretKey = [dict objectForKey: @"TUYA_API_SECRET_KEY"];
+  
+  [[TuyaSmartSDK sharedInstance] startWithAppKey:appkey secretKey:secretKey];
 }
 
 @end

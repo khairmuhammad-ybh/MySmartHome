@@ -125,6 +125,11 @@ def enableHermes = project.ext.react.get("enableHermes", false);
  */
 def nativeArchitectures = project.getProperties().get("reactNativeDebugArchitectures")
 
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+def TuyaApiAppKey = properties.getProperty('tuya_api_app_key')
+def TuyaApiSecretKey  = properties.getProperty('tuya_api_secret_key')
+
 android {
     ndkVersion rootProject.ext.ndkVersion
 
@@ -136,6 +141,9 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+
+        manifestPlaceholders = [TuyaApiAppKey: TuyaApiAppKey]
+        manifestPlaceholders = [TuyaApiSecretKey: TuyaApiSecretKey]
     }
     splits {
         abi {
